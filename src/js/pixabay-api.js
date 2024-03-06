@@ -34,6 +34,13 @@ const requestForImgs = async (event) => {
              iziToast.show({ message: "Sorry, there are no images matching your search query. Please try again!", backgroundColor: "red", messageColor: "white", position: "topCenter" })
          } else {
              doMarkUp(response.data)
+             const item = document.querySelector(".gallery-item")
+    const itemHight = item.getBoundingClientRect().height
+    window.scrollBy({
+  top: (itemHight * 2),
+  left: 0,
+  behavior: "smooth",
+});
              document.querySelector(".more-btn").classList.remove("is-hidden")
              if (event.target === document.querySelector(".more-btn")) {
                 const imgPerOneTime = 15 

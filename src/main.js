@@ -22,5 +22,13 @@ function doSearch(event) {
 moreBtn.addEventListener("click", showMoreImgs)
 
 function showMoreImgs(event) {
-requestForImgs(event)
+    requestForImgs(event)
+//     const item = document.querySelector(".gallery-item")
+//     const itemHight = item.getBoundingClientRect().height
+//     window.scrollBy({
+//   top: (itemHight * 2),
+//   left: 0,
+//   behavior: "smooth",
+// });
+    console.log(itemHight * 2)
 }

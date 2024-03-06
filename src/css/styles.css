@@ -67,6 +67,27 @@
   transition: background-color 250ms ease-in-out;
 }
 
+.more-btn {
+  width: 91px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: transparent;
+    border-radius: 8px;
+    background: rgb(78, 117, 255);
+    border: 1px solid transparent;
+    color: white;
+    transition: background-color 250ms ease-in-out;
+}
+
+.more-btn:hover {
+    background-color: rgb(108, 140, 255);
+  }
+
 .form-btn:hover {
   background-color: rgb(108, 140, 255);
 }
