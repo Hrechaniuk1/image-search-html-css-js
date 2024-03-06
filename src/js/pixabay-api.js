@@ -34,13 +34,6 @@ const requestForImgs = async (event) => {
              iziToast.show({ message: "Sorry, there are no images matching your search query. Please try again!", backgroundColor: "red", messageColor: "white", position: "topCenter" })
          } else {
              doMarkUp(response.data)
-             const item = document.querySelector(".gallery-item")
-    const itemHight = item.getBoundingClientRect().height
-    window.scrollBy({
-  top: (itemHight * 2),
-  left: 0,
-  behavior: "smooth",
-});
              document.querySelector(".more-btn").classList.remove("is-hidden")
              if (event.target === document.querySelector(".more-btn")) {
                 const imgPerOneTime = 15 
@@ -50,6 +43,13 @@ const requestForImgs = async (event) => {
                      document.querySelector(".more-btn").classList.add("is-hidden")
                      iziToast.show({ message: "We're sorry, but you've reached the end of search results.", backgroundColor: "red", messageColor: "white", position: "topCenter" })
                  }
+                 const item = document.querySelector(".gallery-item")
+                    const itemHight = item.getBoundingClientRect().height
+                    window.scrollBy({
+                        top: (itemHight * 2),
+                        left: 0,
+                        behavior: "smooth",
+                        });
              }
          }
          loader.classList.add("is-hidden")
