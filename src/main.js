@@ -1,12 +1,18 @@
 import requestForImgs from "./js/pixabay-api.js"
 import iziToast from "izitoast";
+import { showMoreImgs } from "./js/pixabay-api.js";
+
+// =============================================================================
 
 const form = document.querySelector(".form")
 const moreBtn = document.querySelector(".more-btn")
 
-
+// =============================================================================
 
 form.addEventListener("submit", doSearch)
+moreBtn.addEventListener("click", showMoreImgsBtn)
+
+// =============================================================================
 
 function doSearch(event) {
     event.preventDefault()
@@ -19,8 +25,7 @@ function doSearch(event) {
     form.reset()
 }
 
-moreBtn.addEventListener("click", showMoreImgs)
 
-function showMoreImgs(event) {
-    requestForImgs(event)
+function showMoreImgsBtn(event) {
+    showMoreImgs(event)
 }
