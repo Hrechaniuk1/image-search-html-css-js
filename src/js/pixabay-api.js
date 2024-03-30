@@ -8,7 +8,7 @@ import axios from "axios";
 const loader = document.querySelector(".loader")
 const imgPerOneTime = 15 
 let imgAmount
-const totalPages = Math.ceil(imgAmount / imgPerOneTime)
+let totalPages
 let page = 1
 let searchWord
 
@@ -59,6 +59,8 @@ export async function showMoreImgs(event) {
                  page,
              }
         })
+        imgAmount = response.data.totalHits
+        totalPages = Math.ceil(imgAmount / imgPerOneTime)
         if (response.data.hits.length === 0) {
              iziToast.show({ message: "Sorry, there are no images matching your search query. Please try again!", backgroundColor: "red", messageColor: "white", position: "topCenter" })
          } else {
